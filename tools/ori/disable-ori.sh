@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-APP_NAME="io.synaptical.ori.simulator"
+# Default to real Ori host; use --simulator to target the simulator manifest.
+APP_NAME="io.synaptical.ori"
+
+if [[ "${1:-}" == "--simulator" ]]; then
+  APP_NAME="io.synaptical.ori.simulator"
+  shift
+fi
 
 ###############################################################################
 # Detect platform

@@ -6,9 +6,9 @@ For FireFox NativeMessaging, a manifest file must be copied into its NativeMessa
 The following scripts generate and write the appropriate manifest file, which points to
 the ori-simulator.py so your extension can "talk" to it.
 
-1. `chmod +x ./tools/ori-simulator/{*.sh,*.py}`
-2. `./tools/ori-simulator/enable-ori-simulator.sh`
-3. `./tools/ori-simulator/ori-simulator.py`
+1. `chmod +x ./tools/ori/{*.sh,*.py}`
+2. `./tools/ori/enable-ori.sh --simulator`
+3. `./tools/ori/ori-simulator.py`
 4. `Ctrl-C to quit`
 
 ### Optional

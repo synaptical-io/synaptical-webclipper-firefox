@@ -1,12 +1,22 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-APP_NAME="io.synaptical.ori.simulator"
+# Default to real Ori host; use --simulator to target the simulator manifest.
+APP_NAME="io.synaptical.ori"
+
+if [[ "${1:-}" == "--simulator" ]]; then
+  APP_NAME="io.synaptical.ori.simulator"
+  shift
+fi
+
 DESCRIPTION="Synaptical Ori"
 EXTENSION_ID="synaptical_webclipper@synaptical.io"
 
-# Optional: allow passing the path to the ori-simulator script as $1.
-# If not provided, default to tools/ori-simulator/ori-simulator.py relative
+# Optional: allow passing the path to the host script as the first non-flag argument.
+# Usage:
+#   enable-ori.sh [--simulator] [path/to/host-script.py]
+#
+# If not provided, defaults to tools/ori-simulator/ori-simulator.py relative
 # to the current working directory.
 HOST_SCRIPT_RELATIVE="${1:-tools/ori-simulator/ori-simulator.py}"
 
@@ -16,7 +26,7 @@ HOST_SCRIPT_RELATIVE="${1:-tools/ori-simulator/ori-simulator.py}"
 if [ ! -f "$HOST_SCRIPT_RELATIVE" ]; then
   echo "❌ Could not find native host script at: $HOST_SCRIPT_RELATIVE"
   echo "   Pass the path as an argument, e.g.:"
-  echo "     $0 path/to/ori-simulator.py"
+  echo "     $0 [--simulator] path/to/ori-simulator.py"
   exit 1
 fi
 
