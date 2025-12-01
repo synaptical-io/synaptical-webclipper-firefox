@@ -10,7 +10,7 @@
     // Hard Ignore (!!): Completely ignore directory from all Biome analysis vs.
     // Soft Ignore: Ignore this directory for linting/formatting, but keep it
     // for type analysis (e.g., generated types)
-    "includes": ["**", "!!dist", "!!build", "!!node_modules"]
+    "includes": ["**", "!!**/dist", "!!**/build"]
   },
   "formatter": {
     "enabled": true,

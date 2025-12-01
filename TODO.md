@@ -3,6 +3,8 @@
 - [ ] Revise project setup scripts to update package.json for format, lint, and check
 - [ ] Evaluate Firefox Devtools extension
 - [ ] Create documentation describing how to create a Firefox profile for debugging
+- [ ] Revise internal setup scripts to generate ./husky commit hooks, its own setup is sketchy
+- [ ] Note in docs that dev needs to set permissions on hooks `chmod +x .husky/pre-commit`
 ---
 
 # TODO Details

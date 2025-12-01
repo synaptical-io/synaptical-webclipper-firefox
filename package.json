@@ -7,12 +7,16 @@
     "test": "tests"
   },
   "scripts": {
-    "biome:format": "biome format .",
-    "biome:lint": "biome lint .",
-    "biome:check": "biome check .",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky",
-    "lint-staged": "lint-staged"
+    "biome:check": "biome check",
+    "biome:format": "biome format",
+    "biome:lint": "biome lint",
+    "build": "./tasks/build.sh",
+    "clean": "./tasks/clean.sh",
+    "dist": "./tasks/dist.sh",
+    "lint": "npm run biome:check",
+    "run": "./tasks/run.sh",
+    "test": "./tasks/test.sh",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
