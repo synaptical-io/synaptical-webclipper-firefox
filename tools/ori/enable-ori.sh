@@ -16,9 +16,9 @@ EXTENSION_ID="synaptical_webclipper@synaptical.io"
 # Usage:
 #   enable-ori.sh [--simulator] [path/to/host-script.py]
 #
-# If not provided, defaults to tools/ori-simulator/ori-simulator.py relative
+# If not provided, defaults to tools/ori/ori-simulator.py relative
 # to the current working directory.
-HOST_SCRIPT_RELATIVE="${1:-tools/ori-simulator/ori-simulator.py}"
+HOST_SCRIPT_RELATIVE="${1:-tools/ori/ori-simulator.py}"
 
 ###############################################################################
 # Helper: resolve absolute path to the host script
