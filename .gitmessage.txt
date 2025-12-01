@@ -1,0 +1,35 @@
+# Conventional Commit format:
+# <type>(<scope>): <short summary>
+#
+# Common types:
+#   feat     – new feature
+#   fix      – bug fix
+#   chore    – maintenance, tooling, deps
+#   refactor – code change, same behavior
+#   docs     – documentation only
+#   test     – tests only
+#   build    – build system / deps
+#   ci       – CI config
+#   style    – formatting, no code change
+#   perf     – performance
+#
+# Examples:
+#   feat(popup): show Ori connection status
+#   fix(sidebar): avoid crash when no active tab
+#   chore(build): speed up swc compile
+
+# Write your subject line below (first non-# line):
+# <type>(<scope>): <short summary>
+
+
+# Body (optional)
+# Explain what and why, at a high level.
+# - What changed?
+# - Why did it change?
+# - Any side effects?
+
+# Testing (optional)
+# - How did you test this?
+
+# Refs (optional)
+# - Issue IDs, tickets, docs, etc.

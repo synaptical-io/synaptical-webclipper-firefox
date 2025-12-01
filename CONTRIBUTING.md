@@ -2,6 +2,14 @@
 
 This repo uses [Conventional Commits](https://www.conventionalcommits.org).
 
+An optional commit message template is in `.gitmessage.txt`.
+
+To enable it for this repository:
+
+```bash
+git config commit.template .gitmessage.txt
+```
+
 Format:
 
 ```text
