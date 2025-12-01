@@ -1,0 +1,40 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": false,
+    // Hard Ignore (!!): Completely ignore directory from all Biome analysis vs.
+    // Soft Ignore: Ignore this directory for linting/formatting, but keep it
+    // for type analysis (e.g., generated types)
+    "includes": ["**", "!!dist", "!!build", "!!node_modules"]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space", // Use tab for better accessibility (vision impairments)
+    "lineWidth": 100,
+    "useEditorconfig": true // Respect .editorconfig settings (Editorconfig is ubiquitous)
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single"
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  // 👇 Extensions we actively recommend for this workspace
+  "recommendations": [
+    // Core project tooling
+    "biomejs.biome", // Biome: formatter + linter + imports
+    "EditorConfig.EditorConfig", // Respect shared .editorconfig across editors
+
+    // Repo hygiene / collaboration
+    "eamodio.gitlens", // GitLens: rich blame/history built into VS Code
+    "streetsidesoftware.code-spell-checker", // Spell-check for READMEs, comments, docs
+
+    // Shell scripting support
+    "timonwong.shellcheck", // ShellCheck: shell script linter
+    "foxundermoon.shell-format" // Shell Format: shell script formatter
+  ],
+
+  // 👇 Things we *don’t* want VS Code to suggest in this repo
+  "unwantedRecommendations": [
+    // We use Biome instead of ESLint/Prettier-style setups
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "rvest.vs-code-prettier-eslint",
+    "ms-vscode.vscode-typescript-tslint-plugin"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // 1) Build → Run extension (via run.sh)
+      "name": "Build & Run extension (web-ext)",
+      "type": "node",
+      "request": "launch",
+      // We tell the debugger to run bash instead of node
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "./tasks/run.sh"],
+      "cwd": "${workspaceFolder}",
+      // This will run BEFORE bash ./tasks/run.sh
+      "preLaunchTask": "build",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      // 2) Dev pipeline: build → dist → run (using the chained dev task)
+      "name": "Dev pipeline (build, dist, run)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "echo Dev pipeline finished. (See tasks for details)"],
+      "cwd": "${workspaceFolder}",
+      // This invokes the dev task, which dependsOn dist/run
+      "preLaunchTask": "dev",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      // 3) Run tests via test.sh
+      "name": "Run tests (test.sh)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "./tasks/test.sh"],
+      "cwd": "${workspaceFolder}",
+      // If tests require build artifacts first, you can:
+      // "preLaunchTask": "build",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ],
+  "compounds": [
+    {
+      // 4) Optional: run both dev pipeline and tests together
+      "name": "Dev + Tests",
+      "configurations": ["Dev pipeline (build, dist, run)", "Run tests (test.sh)"]
+    }
+  ]
+}

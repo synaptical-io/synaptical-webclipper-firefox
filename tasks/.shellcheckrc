@@ -1,0 +1,5 @@
+# ShellCheck configuration for setup/
+source-path=SCRIPTDIR
+external-sources=true
+enable=quote-safe-variables
+enable=check-unassigned-uppercase

@@ -1,0 +1,25 @@
+#!/usr/bin/env zsh
+
+# --- Load nvm ---------------------------------------------------------
+export NVM_DIR="$HOME/.nvm"
+
+# If you installed via the standard curl script, this is correct:
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+  . "$NVM_DIR/nvm.sh"
+else
+  echo "pre-commit: nvm.sh not found at $NVM_DIR/nvm.sh" >&2
+  exit 1
+fi
+
+# --- Select Node version ----------------------------------------------
+# If the repo has .nvmrc, use that version; otherwise use 'default'
+if [ -f ".nvmrc" ]; then
+  nvm use --silent >/dev/null
+else
+  # Try the default alias; if that fails, fall back to whatever nvm thinks is best
+  nvm use --silent default >/dev/null 2>&1 || nvm use --silent >/dev/null
+fi
+
+# --- Run your pre-commit commands -------------------------------------
+# At this point, node/npm/npx are on PATH via nvm
+npm run lint-staged
