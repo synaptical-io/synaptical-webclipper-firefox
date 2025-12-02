@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Synaptical WebClipper (Dev)",
+  "version": "__VERSION__",
+  "description": "Synaptical WebClipper for Firefox",
+  "author": "Michael Prescott",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "synaptical_webclipper@synaptical.io"
+    }
+  },
+
+  "action": {
+    "default_title": "Synaptical WebClipper (Dev)",
+    "default_popup": "ui/popup/Popup.html",
+    "default_icon": {
+      "16": "ui/assets/icons/synaptical-logo-base_16.png",
+      "32": "ui/assets/icons/synaptical-logo-base_32.png"
+    }
+  },
+
+  "background": {
+    "type": "module",
+    "scripts": ["background/index.js"]
+  },
+
+  "permissions": ["scripting", "activeTab", "nativeMessaging", "storage", "notifications", "tabs"],
+
+  "icons": {
+    "16": "ui/assets/icons/synaptical-logo-base_16.png",
+    "32": "ui/assets/icons/synaptical-logo-base_32.png",
+    "48": "ui/assets/icons/synaptical-logo-base_48.png"
+  }
+}
